@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: zohair-po3-ai-agent
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /health
+    envVars:
+      - key: AGENT_SECRET
+        generateValue: true
+      - key: DB_PATH
+        value: zohair_agent.db

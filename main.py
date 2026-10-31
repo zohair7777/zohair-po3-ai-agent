@@ -8,7 +8,7 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 
 APP_NAME = "ZOHAIR PO3 AI AGENT"
-DB_PATH = os.getenv("DB_PATH", "zohair_agent.db")
+DB_PATH = os.getenv("DB_PATH", "/tmp/zohair_agent.db")
 AGENT_SECRET = os.getenv("AGENT_SECRET", "")
 
 app = FastAPI(title=APP_NAME, version="1.0.0")
